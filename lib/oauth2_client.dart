@@ -76,7 +76,7 @@ class OAuth2Client {
 
     // Present the dialog to the user
     final result = await webAuthClient.authenticate(
-        url: authorizeUrl, callbackUrlScheme: customUriScheme);
+        url: authorizeUrl, callbackUrlScheme: customUriScheme, saveHistory: false);
 
     final fragment = Uri.splitQueryString(Uri.parse(result).fragment);
 
@@ -195,7 +195,7 @@ class OAuth2Client {
 
     // Present the dialog to the user
     final result = await webAuthClient.authenticate(
-        url: authorizeUrl, callbackUrlScheme: customUriScheme);
+        url: authorizeUrl, callbackUrlScheme: customUriScheme, saveHistory: false);
 
     return AuthorizationResponse.fromRedirectUri(result, state);
   }
