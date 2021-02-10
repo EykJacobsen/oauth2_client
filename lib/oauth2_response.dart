@@ -55,7 +55,8 @@ class OAuth2Response {
 
   ///Checks if the access token request returned a valid status code
   bool isValid() {
-    return httpStatusCode == 200 && (error == null || error.isEmpty);
+    return (httpStatusCode == 200 || httpStatusCode == 302) &&
+        (error == null || error.isEmpty);
   }
 
   @override
